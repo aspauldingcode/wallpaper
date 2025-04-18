@@ -71,25 +71,11 @@ wallpaper for the active display/workspace. __I know this isn't ideal__.
 
 ---
 
-## Makefile Explanation
-
-- **CC:** `clang` is used as the C compiler.
-- **CFLAGS:** Compiler flags to enable Objective-C Automatic Reference Counting (`-fobjc-arc`) and enable extra warnings (`-Wall`, `-Wextra`).
-- **FRAMEWORKS:** The necessary macOS frameworks (`AppKit`, `Foundation`) for the wallpaper functionality.
-- **SRC:** The source file to compile (`wallpaper.m`).
-- **BUILD_DIR:** Directory where the compiled binary will be stored.
-- **OUT:** Final compiled binary location.
-- **PLIST_NAME:** The name of the launch agent's plist.
-- **PLIST_SRC:** The source location of the launch agent plist.
-- **PLIST_DEST:** Destination location for the launch agent plist in `~/Library/LaunchAgents`.
-
 ### Common Makefile Targets
 
 - `make build`: Compiles the binary.
 - `make clean`: Cleans up the build directory.
 - `make install`: Installs the binary and plist, and reloads the launch agent.
-
----
 
 ## Usage
 
@@ -98,7 +84,3 @@ Once installed, the wallpaper tool will run as a daemon in the background, perio
 You can unload or reload the launch agent with the following commands:
 - Unload: `launchctl unload ~/Library/LaunchAgents/com.aspauldingcode.wallpaper.plist`
 - Reload: `launchctl load ~/Library/LaunchAgents/com.aspauldingcode.wallpaper.plist`
-
----
-
-Let me know if you'd like to adjust or add anything else to the README!
